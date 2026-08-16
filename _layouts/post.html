@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <p class="eyebrow">{{ page.category | default: "Field note" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-deck">{{ page.description }}</p>{% endif %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.reading_time %}<span aria-hidden="true">·</span><span>{{ page.reading_time }} min read</span>{% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <p>Have a correction or a different mental model? <a href="https://github.com/karsagar28/karsagar28.github.io/issues/new">Open a note on GitHub</a>.</p>
+    <a class="back-link" href="{{ '/' | relative_url }}">← All notes</a>
+  </footer>
+</article>
+

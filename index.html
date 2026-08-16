@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <p class="eyebrow">Layer 2 and beyond</p>
+  <h1>Working through networks,<br>one question at a time.</h1>
+  <p class="hero-copy">Questions, diagrams, and practical notes about the systems that move packets—from Ethernet flow control to large-scale network design.</p>
+</section>
+
+<section class="notes-section" aria-labelledby="latest-notes">
+  <div class="section-heading">
+    <h2 id="latest-notes">Latest notes</h2>
+    <span>{{ site.posts | size }} {% if site.posts.size == 1 %}entry{% else %}entries{% endif %}</span>
+  </div>
+
+  <div class="note-list">
+    {% for post in site.posts %}
+      <article class="note-card">
+        <div class="note-card-meta">
+          <span>{{ post.category | default: "Field note" }}</span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+        <a class="read-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read note <span aria-hidden="true">→</span></a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+

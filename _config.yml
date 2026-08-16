@@ -1,0 +1,27 @@
+title: Network Architect Scratchpad
+description: Questions, diagrams, and working notes on networks, Ethernet, and distributed systems.
+url: https://karsagar28.github.io
+baseurl: ""
+lang: en-US
+timezone: America/New_York
+author: karsagar28
+
+permalink: /notes/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+

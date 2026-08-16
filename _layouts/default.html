@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="site-title" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+          <span class="prompt" aria-hidden="true">&gt;_</span>
+          {{ site.title }}
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}">Notes</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="shell">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>Working notes from the network edge.</p>
+        <p><a href="https://github.com/karsagar28">GitHub</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
+
