@@ -1,5 +1,5 @@
-title: Network Architect Scratchpad
-description: Questions, diagrams, and working notes on networks, Ethernet, and distributed systems.
+title: copy run start
+description: Saving network insights before the next reload.
 url: https://karsagar28.github.io
 baseurl: ""
 lang: en-US
@@ -24,4 +24,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
-

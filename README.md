@@ -1,6 +1,6 @@
-# Network Architect Scratchpad
+# copy run start
 
-The source for [karsagar28.github.io](https://karsagar28.github.io), a question-led technical blog built with Jekyll and GitHub Pages.
+The source for [karsagar28.github.io](https://karsagar28.github.io): saving network insights before the next reload.
 
 ## Add a post
 
