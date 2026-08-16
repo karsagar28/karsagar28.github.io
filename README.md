@@ -8,6 +8,8 @@ The source for [karsagar28.github.io](https://karsagar28.github.io), a question-
 2. Add front matter for `title`, `description`, `date`, `category`, `tags`, and `reading_time`.
 3. Write the article in Markdown and push it to `main`. GitHub Pages publishes it automatically.
 
+Once a draft becomes a post, edit the file under `_posts/` directly. GitHub Pages does not read standalone drafts stored outside this repository, so keeping the published post as the source of truth prevents later edits from diverging.
+
 ## Add images
 
 Keep each post's images together:
