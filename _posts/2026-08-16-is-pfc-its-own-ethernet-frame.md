@@ -1,6 +1,6 @@
 ---
 title: "Is PFC Its Own Ethernet Frame—and Does It Need LLDP?"
-description: "A practical mental model for separating PFC's link-local pause mechanism from LLDP/DCBX configuration and ECN feedback."
+description: "What PFC pauses, what LLDP/DCBX configures, and where ECN fits."
 date: 2026-08-16 09:00:00 -0400
 category: Ethernet
 tags:
