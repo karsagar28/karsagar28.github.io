@@ -16,7 +16,7 @@ While learning about lossless Ethernet, I kept running into three acronyms: PFC,
 
 > Is Priority-based Flow Control carried inside normal traffic, or is it a frame of its own?
 
-The short answer is that **PFC is its own Ethernet MAC Control frame**. It is not a tag or flag added to a regular data packet. That distinction also explains why PFC does not technically require LLDP: the two protocols have different jobs.
+The short answer is that **PFC is its own Ethernet MAC Control frame**. It is not a tag or flag added to a regular data packet. That distinction also explains why PFC does not technically require LLDP; the two protocols have different jobs.
 
 ## What does a PFC frame look like?
 
@@ -43,7 +43,7 @@ This makes PFC:
 - handled by the receiving NIC or switch rather than routed through the network; and
 - selective, unlike classic Ethernet PAUSE, which stops all traffic on the link.
 
-The IEEE description is precise: PFC inhibits transmission of data frames on one or more priorities for a specified time. It uses destination address `01:80:C2:00:00:01`, the PFC opcode, a priority-enable vector, and a time vector. In other words, it is a command to the adjacent device: **“For these priorities, stop transmitting for this long.”**
+The IEEE description says: PFC inhibits transmission of data frames on one or more priorities for a specified time. It uses destination address `01:80:C2:00:00:01`, the PFC opcode, a priority-enable vector, and a time vector. In other words, it is a command to the adjacent device: **“For these priorities, stop transmitting for this long.”**
 
 ## So, does PFC need LLDP?
 
@@ -72,7 +72,7 @@ The LLDP frames do not perform the pause. They help the two devices agree on the
 
 ## Where does ECN fit?
 
-PFC is sometimes discussed alongside Explicit Congestion Notification, but they signal congestion differently.
+PFC is usually discussed alongside Explicit Congestion Notification, but they signal congestion differently.
 
 | Mechanism | What it does | Scope |
 |---|---|---|
@@ -80,6 +80,7 @@ PFC is sometimes discussed alongside Explicit Congestion Notification, but they 
 | PFC | Tells the adjacent device to pause selected priorities | Hop-by-hop, during congestion |
 | ECN | Marks an IP packet to report congestion without immediately dropping it | Carried toward an endpoint |
 | CNP in RoCEv2 | Tells the sender to reduce its transmission rate after ECN is observed | Feedback toward the source |
+
 
 PFC does not require LLDP/DCBX, but without some way to verify configuration, the neighbors may disagree—for example, the switch may send PFC for priority 3 while the NIC expects RoCE on priority 4. The frames would still be valid, but the intended traffic would not be protected.
 
