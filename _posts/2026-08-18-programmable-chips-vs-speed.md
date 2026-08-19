@@ -1,5 +1,5 @@
 ---
-title: "If Silicon One Is P4-Programmable, Why Is It Still Fast?"
+title: "Programmable Chips vs Speed"
 date: 2026-08-18 09:00:00 -0400
 category: Network Architecture
 tags:
@@ -15,25 +15,29 @@ An early misconception I had about ASICs was that they are fast because they are
 
 Cisco Silicon One is Cisco's new approach to designing networking ASICs. While reading through some training materials on S1 architecture, these lines caught my eye.
 
-"Most networks have fixed rules for how they process traffic. That approach works fine until the requirements change. In artificial intelligence and machine learning (AI/ML) data centers, cloud networks, or 5G environments, traffic patterns shift fast, and rigid hardware can slow you down. Cisco Silicon One fixes this situation by supporting Programming Protocol-independent Packet Processors (P4). This language lets you customize how to process data packets, all in software, without replacing the processor. For example, engineers can program Silicon One (like the G200 or P100) to prioritize traffic for AI workloads like LLM training or to manage different types of services more efficiently."
+<blockquote class="source-quote">
+  <p>Most networks have fixed rules for how they process traffic. That approach works fine until the requirements change. In artificial intelligence and machine learning (AI/ML) data centers, cloud networks, or 5G environments, traffic patterns shift fast, and rigid hardware can slow you down.</p>
+  <p>Cisco Silicon One fixes this situation by supporting Programming Protocol-independent Packet Processors (P4). This language lets you customize how to process data packets, all in software, without replacing the processor.</p>
+  <p>For example, engineers can program Silicon One (like the G200 or P100) to prioritize traffic for AI workloads like LLM training or to manage different types of services more efficiently.</p>
+  <footer>Cisco U training material on Cisco Silicon One</footer>
+</blockquote>
 
 Okay, sweet. But that raised two questions:
 
-1> For a use case that is famously sensitive to speed, why are we making the chips less 'rigid'? Are we teaching our fast pony new tricks?
-2> How far can this programmability be stretched? Is Cisco selling us blank Play-Doh hardware that I, the network engineer, can mold into whatever I want?
-
+1. For a use case that is famously sensitive to speed, why are we making the chips less 'rigid'? Are we teaching our fast pony new tricks?
+2. How far can this programmability be stretched? Is Cisco selling us blank Play-Doh hardware that I, the network engineer, can mold into whatever I want?
 
 Turns out my preconception of what an ASIC is was wrong. An ASIC isn’t necessarily hardwired to perform exactly one algorithm. Instead, it's designed for a specific application domain. One such domain is extremely fast packet forwarding.
 
 Cisco Silicon One is essentially a specialized packet-processing machine:
+
 - The physical machinery is fixed: Ethernet interfaces, packet buffers, lookup engines, arithmetic units, queues, schedulers, memory widths, and processing capacity.
 - The forwarding recipe executed by that machinery is programmable.
 - P4 describes that recipe: which headers to recognize, which fields to use as lookup keys, what tables to consult, and what actions to perform.
 
-
 For example, conceptually, a P4 program might say:
 
-```
+```text
 parse Ethernet → IPv6 → SRv6
 look up destination and policy
 decrement hop limit
@@ -72,9 +76,7 @@ The word programmable can mean different things depending on what part of the li
 
 So the P4 programmability is mostly at layer 2, and I am not the one doing the customizing. Cisco doesn't expose the P4 toolchain on IOS-XR or NX-OS. Hyperscalers with direct Silicon One SDK access may get more rope.
 
-
 Intel's Tofino is the counterexample. It genuinely handed P4 to end users, and it turns out customers didn't really want it anyway. Tofino 2 sat at 12.8T while Tomahawk 4 shipped 25.6T and Tomahawk 5 hit 51.2T. Customers chose bandwidth-per-watt over the ability to write their own ASIC pipeline.
-
 
 ## Where AI fits
 
@@ -83,7 +85,6 @@ AI networks need very fast hardware, but the way they use that hardware is still
 This is where P4 helps. Cisco says it has added things like Multipath Reliable Connection support and packet trimming to existing Silicon One hardware through P4 software updates.
 
 That gives AI networks both things I originally thought were incompatible: specialized hardware for speed, plus enough flexibility to support new forwarding behavior before the next ASIC architecture change.
-
 
 ## So, what did I get wrong?
 
