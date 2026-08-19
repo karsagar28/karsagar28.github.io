@@ -1,6 +1,5 @@
 ---
 title: "If Silicon One Is P4-Programmable, Why Is It Still Fast?"
-description: "P4 changes the forwarding recipe, not the hardware underneath it."
 date: 2026-08-18 09:00:00 -0400
 category: Network Architecture
 tags:

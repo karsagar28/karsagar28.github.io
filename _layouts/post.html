@@ -5,7 +5,6 @@ layout: default
   <header class="post-header">
     <p class="eyebrow">{{ page.category | default: "Field note" }}</p>
     <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="post-deck">{{ page.description }}</p>{% endif %}
     <div class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       {% if page.reading_time %}<span aria-hidden="true">·</span><span>{{ page.reading_time }} min read</span>{% endif %}
