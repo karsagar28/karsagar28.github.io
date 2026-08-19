@@ -9,10 +9,10 @@
 </style></defs>
 <rect width="100%" height="100%" fill="#f7f8f4"/>
 <g transform="translate(30.00,5.00)">
-<text x="160.00" y="73.00" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#0b2739" text-anchor="start"><tspan x="160.00" dy="0">Who can program what?</tspan></text>
+<text x="160.00" y="73.00" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#0b2739" text-anchor="start"><tspan x="160.00" dy="0">Who gets to program what?</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="160.00" y="110.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="160.00" dy="0">Same chip. Different layers of control.</tspan></text>
+<text x="160.00" y="110.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="160.00" dy="0">Four stages. Four different kinds of control.</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <path d="M144.81 780.66 C146.76 659.43,146.07 538.06,144.43 189.74 M144.67 780.38 C147.02 553.41,146.73 326.56,144.88 189.85" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,58 +30,58 @@
 <path d="M180.04 144.42 C306.44 143.35,434.00 144.10,799.28 144.41 M180.09 145.30 C334.28 144.95,488.42 145.03,800.39 145.35 M799.29 146.26 C801.36 194.11,799.40 244.82,800.31 289.33 M800.88 144.35 C800.36 186.75,799.29 227.93,800.28 289.01 M800.36 290.33 C608.18 287.59,415.63 287.87,180.40 289.45 M800.30 289.97 C615.82 289.28,432.04 289.81,180.34 290.05 M180.08 289.48 C179.38 256.40,182.24 223.83,178.39 144.79 M179.01 289.98 C178.56 248.34,179.97 205.72,179.57 145.13" stroke="#14212b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="194.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Runtime state</tspan></text>
+<text x="210.00" y="194.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Runtime / day-2</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <text x="210.00" y="232.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">routes, neighbors, ACL and table entries</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="270.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#007f78" text-anchor="start"><tspan x="210.00" dy="0">owner: operator / NOS</tspan></text>
+<text x="210.00" y="270.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#007f78" text-anchor="start"><tspan x="210.00" dy="0">controlled by: network engineer</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <path d="M180.79 309.02 L800.94 311.33 L798.73 453.35 L181.13 454.53" stroke="none" fill="#ffffff"/>
 <path d="M179.81 309.36 C307.54 311.56,433.12 312.48,799.61 310.03 M179.85 309.92 C387.13 310.33,593.67 310.30,800.26 309.95 M801.44 308.27 C801.98 341.18,802.78 373.56,801.87 454.85 M800.07 310.15 C801.16 360.98,802.18 412.38,799.91 455.42 M800.45 454.99 C569.36 452.17,338.40 453.18,180.14 455.41 M800.40 454.74 C676.21 455.84,551.99 455.93,180.24 455.12 M181.20 453.35 C179.11 401.94,179.05 346.85,180.76 308.96 M179.88 454.97 C178.79 404.74,178.23 355.15,179.33 310.08" stroke="#60717d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="359.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Deployment profile</tspan></text>
+<text x="210.00" y="359.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Boot / day-1</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="397.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">supported resource profiles and platform modes</tspan></text>
+<text x="210.00" y="397.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">vendor-precompiled forwarding profiles</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="435.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">owner: operator</tspan></text>
+<text x="210.00" y="435.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">controlled by: network architect</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <path d="M178.39 475.71 L801.12 475.58 L799.74 619.28 L180.83 621.66" stroke="none" fill="#e8efec"/>
 <path d="M179.58 474.31 C307.04 474.81,433.85 474.30,799.94 475.66 M179.62 475.34 C315.99 476.51,451.71 476.37,800.13 475.36 M799.59 474.27 C802.60 517.25,802.17 560.30,799.43 620.38 M799.26 475.95 C801.05 508.21,800.16 540.83,799.54 619.83 M800.53 619.65 C654.54 618.36,509.17 616.90,179.88 619.76 M799.69 620.31 C611.81 621.59,423.14 622.05,180.14 620.18 M178.32 621.22 C181.75 572.48,182.75 523.87,179.13 473.14 M180.75 619.96 C181.92 561.14,181.38 504.58,179.09 475.03" stroke="#007f78" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="524.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">P4 forwarding program</tspan></text>
+<text x="210.00" y="524.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Compile time</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="562.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">parsers and match-action behavior</tspan></text>
+<text x="210.00" y="562.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">parser, headers and match-action pipeline</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="600.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#007f78" text-anchor="start"><tspan x="210.00" dy="0">owner: vendor / SDK customer</tspan></text>
+<text x="210.00" y="600.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#007f78" text-anchor="start"><tspan x="210.00" dy="0">controlled by: software vendor</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <path d="M179.99 638.39 L801.30 639.82 L800.76 785.22 L180.53 784.79" stroke="none" fill="#ffffff"/>
 <path d="M179.35 639.25 C306.54 638.06,434.57 637.72,800.27 639.69 M180.18 639.97 C368.85 641.89,557.75 641.63,800.00 639.96 M801.73 640.27 C800.32 693.32,798.65 743.04,801.00 785.90 M800.45 639.75 C798.95 684.44,800.15 727.28,799.17 784.24 M800.62 784.30 C615.72 787.90,430.34 787.17,179.62 785.71 M799.78 785.08 C671.40 783.19,542.28 783.21,180.04 785.25 M179.44 785.10 C181.48 747.01,179.56 704.89,181.50 641.31 M179.62 784.95 C180.14 748.54,179.63 712.01,180.86 639.99" stroke="#0b2739" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="689.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">Physical ASIC</tspan></text>
+<text x="210.00" y="689.00" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">ASIC design time</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="727.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">ports, buffers, SerDes and processing engines</tspan></text>
+<text x="210.00" y="727.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="210.00" dy="0">buffers, SerDes, VOQ and TCAM/SRAM sizing</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="210.00" y="765.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">owner: chip designer</tspan></text>
+<text x="210.00" y="765.00" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#0b2739" text-anchor="start"><tspan x="210.00" dy="0">controlled by: hardware vendor</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
 <path d="M201.59 830.08 L781.49 829.06 L781.77 931.16 L200.24 931.92" stroke="none" fill="#e8efec"/>
 <path d="M200.72 830.79 C319.45 831.21,437.32 831.04,780.60 830.32 M199.94 830.39 C426.10 828.26,652.59 827.89,779.87 830.37 M779.88 831.27 C777.30 851.04,778.40 876.07,778.56 931.42 M779.65 830.56 C781.39 866.71,780.69 904.80,780.79 930.65 M780.70 930.56 C571.32 932.34,361.96 932.34,199.35 930.07 M779.87 929.85 C599.45 929.01,419.13 929.40,199.95 930.32 M200.55 928.97 C199.73 907.51,198.87 885.83,199.86 830.49 M200.49 929.95 C200.46 898.88,199.97 867.31,200.62 829.94" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="490.00" y="889.00" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#0b2739" text-anchor="middle"><tspan x="490.00" dy="0">Each layer is limited by what sits below it.</tspan></text>
+<text x="490.00" y="889.00" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#0b2739" text-anchor="middle"><tspan x="490.00" dy="0">The P4 story mostly lives at compile time.</tspan></text>
 </g>
 </svg>

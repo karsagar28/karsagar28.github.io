@@ -13,5 +13,5 @@ description: About copy run start.
 
   <p>Topics will include Ethernet, data-center networking, congestion control, RoCE, and whatever question is interesting enough to investigate next.</p>
 
-  <p>These are living notes. If you spot an error or have a useful counterexample, corrections are welcome through <a href="https://github.com/karsagar28/karsagar28.github.io/issues">GitHub</a>.</p>
+  <p>These are living notes.</p>
 </article>
