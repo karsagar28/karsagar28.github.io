@@ -1,6 +1,5 @@
 ---
 title: "Why PFC does (or does not) require LLDP"
-description: "What PFC pauses, what LLDP/DCBX configures, and where ECN fits."
 date: 2026-08-16 09:00:00 -0400
 category: Ethernet
 tags:

@@ -185,13 +185,6 @@ a:hover { color: var(--accent); }
 
 .note-card h3 a:hover { color: var(--accent-dark); }
 
-.note-card p {
-  max-width: 680px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .read-link {
   white-space: nowrap;
   font-size: 0.82rem;
@@ -216,13 +209,6 @@ a:hover { color: var(--accent); }
   font-size: clamp(2.35rem, 6vw, 4.5rem);
   line-height: 1.05;
   letter-spacing: -0.05em;
-}
-
-.post-deck {
-  margin: 26px 0 0;
-  color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.6;
 }
 
 .post-meta {
@@ -396,4 +382,3 @@ a:hover { color: var(--accent); }
   .post-content pre { margin-inline: -8px; padding: 18px; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 0; }
 }
-

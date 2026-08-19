@@ -22,7 +22,6 @@ title: Home
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         </div>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
         <a class="read-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read note <span aria-hidden="true">→</span></a>
       </article>
     {% endfor %}
