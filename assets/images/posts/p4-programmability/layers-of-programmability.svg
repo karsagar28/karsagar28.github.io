@@ -12,9 +12,6 @@
 <text x="160.00" y="73.00" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#0b2739" text-anchor="start"><tspan x="160.00" dy="0">Who gets to program what?</tspan></text>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="160.00" y="110.00" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#60717d" text-anchor="start"><tspan x="160.00" dy="0">Four stages. Four different kinds of control.</tspan></text>
-</g>
-<g transform="translate(30.00,5.00)">
 <path d="M144.81 780.66 C146.76 659.43,146.07 538.06,144.43 189.74 M144.67 780.38 C147.02 553.41,146.73 326.56,144.88 189.85" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M153.44 201.53 C152.19 200.90,149.33 196.14,144.41 188.93 M152.73 202.55 C150.20 198.83,147.79 195.39,144.75 190.67" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M145.94 188.54 C144.84 193.24,141.97 193.81,136.91 201.92 M145.23 189.56 C142.79 194.15,140.38 199.00,137.25 203.66" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -82,6 +79,6 @@
 <path d="M200.72 830.79 C319.45 831.21,437.32 831.04,780.60 830.32 M199.94 830.39 C426.10 828.26,652.59 827.89,779.87 830.37 M779.88 831.27 C777.30 851.04,778.40 876.07,778.56 931.42 M779.65 830.56 C781.39 866.71,780.69 904.80,780.79 930.65 M780.70 930.56 C571.32 932.34,361.96 932.34,199.35 930.07 M779.87 929.85 C599.45 929.01,419.13 929.40,199.95 930.32 M200.55 928.97 C199.73 907.51,198.87 885.83,199.86 830.49 M200.49 929.95 C200.46 898.88,199.97 867.31,200.62 829.94" stroke="#007f78" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g transform="translate(30.00,5.00)">
-<text x="490.00" y="889.00" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#0b2739" text-anchor="middle"><tspan x="490.00" dy="0">The P4 story mostly lives at compile time.</tspan></text>
+<text x="490.00" y="889.00" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#0b2739" text-anchor="middle"><tspan x="490.00" dy="0">The P4 changes mostly occurs at compile time.</tspan></text>
 </g>
 </svg>
