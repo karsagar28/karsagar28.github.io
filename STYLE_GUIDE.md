@@ -317,6 +317,8 @@ Packet layouts should show only fields relevant to the argument first. Provide o
 
 Create every explanatory diagram in Excalidraw. Keep the editable `.excalidraw` source beside the exported SVG. Do not substitute Mermaid, generic flowchart styling, or a screenshot of the Excalidraw canvas.
 
+Use the `copyrunstart` collection in the author's Excalidraw workspace as the canonical home for every blog diagram. Name each scene descriptively, update that scene rather than creating disconnected copies, and keep the repository's editable source and SVG export synchronized with the collection version used on the site.
+
 Store both files with the post:
 
 ```text
