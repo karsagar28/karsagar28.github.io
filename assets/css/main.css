@@ -244,6 +244,24 @@ a:hover { color: var(--accent); }
   font-size: 1.15rem;
 }
 
+.post-content .source-quote {
+  padding-left: 20px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.post-content .source-quote p:first-child { margin-top: 0; }
+
+.post-content .source-quote p:last-of-type { margin-bottom: 0; }
+
+.post-content .source-quote footer {
+  margin-top: 14px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
 .post-content code {
   padding: 0.12em 0.32em;
   border-radius: 3px;
@@ -308,6 +326,12 @@ a:hover { color: var(--accent); }
 .post-figure { margin: 2.4em 0; }
 
 .post-figure img { margin-bottom: 0; }
+
+.post-figure--compact {
+  max-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .post-figure figcaption {
   margin-top: 10px;
