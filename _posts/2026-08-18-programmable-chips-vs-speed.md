@@ -48,11 +48,11 @@ rewrite headers
 
 Cisco’s compiler converts that program into bytecode or microcode that runs on Silicon One’s packet-processing engines. Cisco describes this as combining P4 programmability with a “run-to-completion” processing model. See Cisco's [Silicon One architecture paper](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/silicon-one-wp.html).
 
-So the correct intuition is: "The chip is programmable within a fixed hardware envelope."
+> So the correct intuition is: “The chip is programmable within a fixed hardware envelope.”
 
 ## So, it's programmable AND fast?
 
-My mistake was treating specialized and rigid as the same thing.
+My mistake was treating *specialized* and *rigid* as the same thing.
 
 The chip is fast because it has purpose-built packet machinery working in parallel. Lookups happen in dedicated hardware. Buffers and forwarding engines are designed around the single purpose of moving packets as fast as possible. It is not asking a general-purpose CPU to interpret some arbitrary Python program for every frame.
 
@@ -76,7 +76,7 @@ The word programmable can mean different things depending on what part of the li
 
 So the P4 programmability is mostly at layer 2, and I am not the one doing the customizing. Cisco doesn't expose the P4 toolchain on IOS-XR or NX-OS. Hyperscalers with direct Silicon One SDK access may get more rope.
 
-Intel's Tofino is the counterexample. It genuinely handed P4 to end users, and it turns out customers didn't really want it anyway. Tofino 2 sat at 12.8T while Tomahawk 4 shipped 25.6T and Tomahawk 5 hit 51.2T. Customers chose bandwidth-per-watt over the ability to write their own ASIC pipeline.
+> Intel's Tofino is the counterexample. It genuinely handed P4 to end users, and it turns out customers didn't really want it anyway. Tofino 2 sat at 12.8T while Tomahawk 4 shipped 25.6T and Tomahawk 5 hit 51.2T. Customers chose bandwidth-per-watt over the ability to write their own ASIC pipeline.
 
 ## Where AI fits
 
