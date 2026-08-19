@@ -13,13 +13,13 @@ reading_time: 5
 
 An early misconception I had about ASICs was that they are fast because they are one-trick ponies. A computing chip that can perform only one specific operation is fast and cheap to make. Traditional data-center switches were filled with these ASICs. In my head, a packet entered one rigid pipeline on one side, ran along the only lane available, and came out the other side at line rate.
 
-Cisco Silicon One is Cisco's new approach to designing networking ASICs. While reading through some training materials on S1 architecture, these lines caught my eye.
+Cisco Silicon One is Cisco's new approach to designing networking ASICs. While reading through training materials on S1 architecture, these lines caught my eye.
 
 <blockquote class="source-quote">
   <p>Most networks have fixed rules for how they process traffic. That approach works fine until the requirements change. In artificial intelligence and machine learning (AI/ML) data centers, cloud networks, or 5G environments, traffic patterns shift fast, and rigid hardware can slow you down.</p>
   <p>Cisco Silicon One fixes this situation by supporting Programming Protocol-independent Packet Processors (P4). This language lets you customize how to process data packets, all in software, without replacing the processor.</p>
   <p>For example, engineers can program Silicon One (like the G200 or P100) to prioritize traffic for AI workloads like LLM training or to manage different types of services more efficiently.</p>
-  <footer>Cisco U training material on Cisco Silicon One</footer>
+  <footer>CiscoU training material on Cisco Silicon One</footer>
 </blockquote>
 
 Okay, sweet. But that raised two questions:
@@ -70,13 +70,13 @@ The word programmable can mean different things depending on what part of the li
 </figure>
 
 1. Physical ASIC RTL/design time - Chip design by the HW vendor. Things like buffer architecture, SerDes count, VOQ, TCAM/SRAM sizing, etc. This can't be changed once set. There is no customization offered here.
-2. Compile time - Things that go in the NOS image, controlled by the software vendor. The parser, header definitions, and match-action pipeline are expressed in a P4-ish language, compiled to pipeline microcode, and shipped as part of the software release. This is the layer where SRv6 uSID or a new encap shows up as a software upgrade instead of a silicon respin. It's "software," but it's Cisco's software, not yours.
-3. Boot / day-1 - Network architect controlled. Hardware forwarding profiles: TCAM carving, table-scale profiles that trade LPM against ACL space, port breakout, sometimes standalone-vs-fabric mode. You're picking from a menu of vendor-precompiled configurations, not recompiling the pipeline. The network architect controls this, but in most cases a reload is required. It is not typically a day-2 operations activity.
-4. Runtime / day-2 - Network engineer controlled. This consists of populating table entries. Normal networking. The pipeline behavior is already fixed.
+2. Compile time - Things that go in the NOS image, controlled by the software vendor. The parser, header definitions, and match-action pipeline are expressed in a P4-ish language, compiled to pipeline microcode, and shipped as part of the software release. This is thow SRv6 uSID feature or a new encap can be added without a silicon respin. It's "software" but it's Cisco's software, not yours.
+3. Boot / day-1 - Network architect controlled. Hardware forwarding profiles: TCAM carving, table-scale profiles that trade LPM against ACL space, port breakout etc. You're picking from a menu of vendor-precompiled configurations, not recompiling the pipeline. The network architect controls it, but in most cases a reload is required, not typically a day-2 operations activity.
+4. Runtime / day-2 - Network engineer controlled. This consists of populating table entries. The pipeline behavior is already fixed.
 
 So the P4 programmability is mostly at layer 2, and I am not the one doing the customizing. Cisco doesn't expose the P4 toolchain on IOS-XR or NX-OS. Hyperscalers with direct Silicon One SDK access may get more rope.
 
-> Intel's Tofino is the counterexample. It genuinely handed P4 to end users, and it turns out customers didn't really want it anyway. Tofino 2 sat at 12.8T while Tomahawk 4 shipped 25.6T and Tomahawk 5 hit 51.2T. Customers chose bandwidth-per-watt over the ability to write their own ASIC pipeline.
+> Intel's Tofino is the counterexample. It handed P4 to end users, but it turns out customers didn't really want it. Tofino-2 was at 12.8T while Tomahawk 4 shipped 25.6T and Tomahawk 5 hit 51.2T. Customers chose bandwidth-per-watt over the ability to write their own ASIC pipeline.
 
 ## Where AI fits
 
