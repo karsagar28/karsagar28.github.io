@@ -17,6 +17,13 @@ A chip built to do one kind of work should be cheaper and faster than a general-
 
 That seemed like a good fit for AI networks, where speed matters a lot. Then I read that Cisco Silicon One uses P4 to make its packet processing programmable.
 
+<blockquote class="source-quote">
+  <p>Most networks have fixed rules for how they process traffic. That approach works fine until the requirements change. In artificial intelligence and machine learning (AI/ML) data centers, cloud networks, or 5G environments, traffic patterns shift fast, and rigid hardware can slow you down.</p>
+  <p>Cisco Silicon One fixes this situation by supporting Programming Protocol-independent Packet Processors (P4). This language lets you customize how to process data packets, all in software, without replacing the processor.</p>
+  <p>For example, engineers can program Silicon One (like the G200 or P100) to prioritize traffic for AI workloads like LLM training or to manage different types of services more efficiently.</p>
+  <footer>Cisco U training material on Cisco Silicon One</footer>
+</blockquote>
+
 Okay, sweet. But now I had two questions:
 
 1. If rigidity makes an ASIC fast, doesn't programmability make it slower?
@@ -63,8 +70,10 @@ This was the second thing that was bothering me
 
 That turns out to be four different layers of control:
 
-![Four stacked layers of programmability: runtime state, deployment profile, the P4 forwarding program, and the physical ASIC. Each layer is constrained by the one below it.]({{ '/assets/images/posts/p4-programmability/layers-of-programmability.svg' | relative_url }})
-
+<figure class="post-figure post-figure--compact">
+  <img src="{{ '/assets/images/posts/p4-programmability/layers-of-programmability.svg' | relative_url }}"
+       alt="Four stacked layers of programmability: runtime state, deployment profile, the P4 forwarding program, and the physical ASIC. Each layer is constrained by the one below it.">
+</figure>
 
 On a normal vendor-supported switch, P4 programmability does not necessarily mean I get the compiler and rewrite the forwarding pipeline myself. More often, it means Cisco can add a new header, encapsulation, or forwarding behavior in a software release without replacing the ASIC. Customers integrating Silicon One more directly may get access to a larger part of the toolchain.
 

@@ -352,6 +352,8 @@ Keep diagrams notebook-like and compact:
 - generous whitespace and no decorative icons unless they carry meaning;
 - a visual hierarchy that makes the intended takeaway apparent before every label is read.
 
+Within the blog's 820-pixel article column, default explanatory diagrams to a maximum width of about 620 pixels and center them. Use the full article width only when the diagram genuinely needs it for legibility. A diagram should interrupt a wall of text without becoming the visual subject of the whole page.
+
 Use a diagram to replace a dense relationship paragraph, not to repeat it. Introduce it with one sentence and follow it with one sentence stating what the reader should notice.
 
 Export as SVG for the article. Add useful alt text and a caption when the intended observation is not obvious from the surrounding sentence. Before delivery, inspect the export at normal article width and a narrow mobile width; all labels must remain legible and no arrows, objects, or text may overlap.
