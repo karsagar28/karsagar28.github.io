@@ -8,6 +8,19 @@ author: karsagar28
 
 permalink: /notes/:title/
 
+# Public token from Cloudflare Web Analytics > Manage site.
+# Leave empty to disable the beacon. Use manual snippet installation in Cloudflare.
+cloudflare_web_analytics:
+  token: "e7ffceadeffb4557b15ca2e1e2b7686b"
+
+# Requires the Giscus GitHub app installed on this repository.
+giscus:
+  enabled: true
+  repo: karsagar28/karsagar28.github.io
+  repo_id: R_kgDOT6Nvyw
+  category: Announcements
+  category_id: DIC_kwDOT6Nvy84DFBtU
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
