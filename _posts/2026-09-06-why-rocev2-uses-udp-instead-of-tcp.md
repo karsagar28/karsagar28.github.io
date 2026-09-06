@@ -38,9 +38,10 @@ RoCE uses InfiniBand (IB) transport mechanisms, which provide reliability in RC 
 
 This explains why TCP is unnecessary for reliability in this case. TCP would introduce another transport layer when IB transport already handles acknowledgment and recovery. UDP provides a lightweight, stateless way to encapsulate those transport packets over IP.
 
-An interesting side note: RDMA over TCP actually exists, in the iWARP protocol suite. [RFC 5044](https://www.rfc-editor.org/rfc/rfc5044.html) specifies the framing layer used to carry its data-placement protocol over TCP.
+> Note: RDMA over TCP actually exists, in the iWARP protocol suite. [RFC 5044](https://www.rfc-editor.org/rfc/rfc5044.html) specifies the framing layer used to carry its data-placement protocol over TCP.
+{: .article-note }
 
-If RoCE has IB transport underneath to ensure reliable delivery, why is there a big fuss about implementing "lossless" Ethernet for AI and HPC (high-performance computing)?
+## If RoCE provides reliable delivery, why use lossless Ethernet?
 
 Packet recovery can be expensive and inefficient, resulting in suboptimal RoCE performance. It takes time to detect lost packets and then retransmit them, usually with a [Go-Back-N mechanism or selective repeat on newer RNICs](https://networking-docs.nvidia.com/winof2driverum/251050020/ethernet-network). With Go-Back-N, a single packet loss can result in several later packets being retransmitted, amplifying the cost. A lossless Ethernet fabric commonly uses Priority-based Flow Control (PFC) and Explicit Congestion Notification (ECN). PFC tells the sender to pause selected traffic. With ECN-based congestion control, switches mark packets traveling toward the receiver, and the receiver sends congestion notification packets (CNPs) back to the sender so it can reduce its rate. These mechanisms help prevent congestion-related drops and reduce the need for recovery. [NVIDIA's RoCE configuration documentation](https://docs.nvidia.com/networking-ethernet-software/cumulus-linux/Layer-1-and-Switch-Ports/Quality-of-Service/RDMA-over-Converged-Ethernet-RoCE/) describes both lossless and lossy modes.
 
