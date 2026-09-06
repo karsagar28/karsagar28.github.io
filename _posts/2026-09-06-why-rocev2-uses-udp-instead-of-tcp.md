@@ -14,7 +14,7 @@ Remote Direct Memory Access (RDMA) over Converged Ethernet, or RoCE, is often de
 
 TCP provides reliable transport through mechanisms such as acknowledgments and retransmissions. On the surface, TCP looks like a good fit for carrying RDMA traffic over an inherently lossy medium like Ethernet. RoCEv2, however, already has a transport layer that can provide reliability above UDP.
 
-To understand why TCP isn't necessary, we need to go a bit deeper into how RoCE transport works. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
+To understand why TCP isn't necessary, we need to look more closely at how RoCE transport works. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
 
 <blockquote class="article-note">
   <p>Note: RDMA has different transport modes. This discussion focuses on RoCEv2 using Reliable Connected (RC) mode. In RC mode, the NIC handles acknowledgments and retransmissions. Unreliable Connected (UC) and Unreliable Datagram (UD) do not provide this transport-level recovery; higher application or protocol layers must handle loss if reliable delivery is required. See <a href="https://networking-docs.nvidia.com/doca/archive/3-5-0/rdma-aware-networks-programming-guide">NVIDIA's transport-mode guide</a> for details.</p>
@@ -40,7 +40,7 @@ RoCE uses InfiniBand (IB) transport mechanisms, which provide reliability in RC 
 This explains why TCP is unnecessary for reliability in this case. TCP would introduce another transport layer when IB transport already handles acknowledgment and recovery. UDP provides a lightweight, stateless way to encapsulate those transport packets over IP.
 
 <blockquote class="article-note">
-  <p>Note: RDMA over TCP actually exists, in the iWARP protocol suite. <a href="https://www.rfc-editor.org/rfc/rfc5044.html">RFC 5044</a> specifies the framing layer used to carry its data-placement protocol over TCP.</p>
+  <p>Note: A flavor of 'RDMA over TCP' actually exists, in the iWARP protocol suite. See <a href="https://www.rfc-editor.org/rfc/rfc5044.html">RFC 5044</a> </p>
 </blockquote>
 
 ## If RoCE provides reliable delivery, why use lossless Ethernet?
