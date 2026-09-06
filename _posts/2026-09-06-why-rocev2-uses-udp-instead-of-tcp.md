@@ -14,7 +14,9 @@ Remote Direct Memory Access (RDMA) over Converged Ethernet, or RoCE, is often de
 
 TCP provides reliable transport through mechanisms such as acknowledgments and retransmissions. On the surface, TCP looks like a good fit for carrying RDMA traffic over an inherently lossy medium like Ethernet. RoCEv2, however, already has a transport layer that can provide reliability above UDP.
 
-To understand why TCP isn't necessary, we need to go a bit deeper into how RoCE transport works. This article focuses on RoCEv2 using Reliable Connected (RC) transport. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
+To understand why TCP isn't necessary, we need to go a bit deeper into how RoCE transport works. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
+
+> Note: RDMA has different transport modes. This discussion focuses on RoCEv2 using Reliable Connected (RC) mode. In RC mode, the NIC handles acknowledgments and retransmissions. Unreliable Connected (UC) and Unreliable Datagram (UD) do not provide this transport-level recovery; higher application or protocol layers must handle loss if reliable delivery is required.
 
 A simplified RoCEv2 stack looks like this, from the RDMA operations down to Ethernet:
 
