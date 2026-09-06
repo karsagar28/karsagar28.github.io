@@ -20,4 +20,8 @@ description: About copy run start.
   <p>I’ve worked in networking since 2010, starting in technical support and product testing before moving into consulting, design, and operations. I hold active CCIE certifications in Data Center and Service Provider CCIE #40988 and a bachelor’s degree in Electronics and Communication Engineering.</p>
 
   <p>These are living notes. I expect to come back and revise them as I learn more.</p>
+
+  <h2>Get in touch</h2>
+
+  <p>Have a question, a correction, or something you’d like to discuss? Reach out to me on <a href="https://www.linkedin.com/in/ksagar/" rel="me">LinkedIn</a>.</p>
 </article>
