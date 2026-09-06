@@ -35,7 +35,7 @@ Cisco Silicon One is essentially a specialized packet-processing machine:
 - The forwarding recipe executed by that machinery is programmable.
 - P4 describes that recipe: which headers to recognize, which fields to use as lookup keys, what tables to consult, and what actions to perform.
 
-For example, conceptually, a P4 program might say:
+For example, a P4 program might say:
 
 ```text
 parse Ethernet → IPv6 → SRv6
@@ -48,7 +48,7 @@ rewrite headers
 
 Cisco’s compiler converts that program into bytecode or microcode that runs on Silicon One’s packet-processing engines. Cisco describes this as combining P4 programmability with a “run-to-completion” processing model. See Cisco's [Silicon One architecture paper](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/silicon-one-wp.html).
 
-> So the correct intuition is: “The chip is programmable within a fixed hardware envelope.”
+> So the correct intuition is: “The chip is programmable within a fixed hardware boundary.”
 
 ## So, it's programmable AND fast?
 
@@ -58,7 +58,7 @@ The chip is fast because it has purpose-built packet machinery working in parall
 
 P4 does not remove those constraints. A program still has to fit into the processing budget offered by that ASIC. If it asks for something the hardware cannot do at line rate, the compiler cannot wish the problem away.
 
-The flexibility exists before the packets arrive. Once the program is compiled and installed, the same specialized hardware executes it at speed.
+The ASIC is flexible 'before' it actually has to start forwarding packets. Once the program is compiled and installed, the same specialized hardware executes it at speed.
 
 ## But who gets to program it?
 
@@ -69,9 +69,9 @@ The word programmable can mean different things depending on what part of the li
        alt="Four stages of control in a programmable switch ASIC: runtime and day-2, boot and day-1, compile time, and ASIC design time. Compile time is where most P4 programmability lives.">
 </figure>
 
-1. Physical ASIC RTL/design time - Chip design by the HW vendor. Things like buffer architecture, SerDes count, VOQ, TCAM/SRAM sizing, etc. This can't be changed once set. There is no customization offered here.
-2. Compile time - Things that go in the NOS image, controlled by the software vendor. The parser, header definitions, and match-action pipeline are expressed in a P4-ish language, compiled to pipeline microcode, and shipped as part of the software release. This is thow SRv6 uSID feature or a new encap can be added without a silicon respin. It's "software" but it's Cisco's software, not yours.
-3. Boot / day-1 - Network architect controlled. Hardware forwarding profiles: TCAM carving, table-scale profiles that trade LPM against ACL space, port breakout etc. You're picking from a menu of vendor-precompiled configurations, not recompiling the pipeline. The network architect controls it, but in most cases a reload is required, not typically a day-2 operations activity.
+1. Physical ASIC RTL/design time - Chip design done by the HW vendor. Things like buffer architecture, SerDes count, VOQ, TCAM/SRAM sizing, etc. This can't be changed once set. There is no customization offered here.
+2. Compile time - Things that go in the NOS image, controlled by the software vendor. The parser, header definitions, and match-action pipeline are expressed in a P4-ish language, compiled to pipeline microcode, and shipped as part of the software release. This is how SRv6 uSID feature or a new encap can be added without a silicon respin. It's "software" but it's Cisco's software, not ours.
+3. Boot / day-1 - Network architect controlled. Hardware forwarding profiles: TCAM carving, table-scale profiles that trade LPM against ACL space (forwarding profile in Cisco switches), port breakout etc. We're picking from a menu of vendor-precompiled configurations. The network architect controls it, but in most cases a reload is required, not typically a day-2 operations activity.
 4. Runtime / day-2 - Network engineer controlled. This consists of populating table entries. The pipeline behavior is already fixed.
 
 So the P4 programmability is mostly at layer 2, and I am not the one doing the customizing. Cisco doesn't expose the P4 toolchain on IOS-XR or NX-OS. Hyperscalers with direct Silicon One SDK access may get more rope.
