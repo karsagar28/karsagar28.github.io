@@ -244,6 +244,10 @@ a:hover { color: var(--accent); }
   font-size: 1.15rem;
 }
 
+.post-content blockquote.article-note {
+  font-size: inherit;
+}
+
 .post-content .source-quote {
   padding-left: 20px;
   color: var(--ink);

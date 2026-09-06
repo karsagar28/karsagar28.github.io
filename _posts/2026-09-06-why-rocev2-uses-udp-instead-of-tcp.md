@@ -17,6 +17,7 @@ TCP provides reliable transport through mechanisms such as acknowledgments and r
 To understand why TCP isn't necessary, we need to go a bit deeper into how RoCE transport works. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
 
 > Note: RDMA has different transport modes. This discussion focuses on RoCEv2 using Reliable Connected (RC) mode. In RC mode, the NIC handles acknowledgments and retransmissions. Unreliable Connected (UC) and Unreliable Datagram (UD) do not provide this transport-level recovery; higher application or protocol layers must handle loss if reliable delivery is required. See [NVIDIA's transport-mode guide](https://networking-docs.nvidia.com/doca/archive/3-5-0/rdma-aware-networks-programming-guide) for details.
+{: .article-note }
 
 A simplified RoCEv2 stack looks like this, from the RDMA operations down to Ethernet:
 
