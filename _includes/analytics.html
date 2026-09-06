@@ -1,0 +1,5 @@
+{% assign analytics_token = site.cloudflare_web_analytics.token | default: '' | strip %}
+{% if jekyll.environment == 'production' and analytics_token != '' %}
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token":{{ analytics_token | jsonify | escape }}}'></script>
+{% endif %}

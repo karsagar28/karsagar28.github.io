@@ -40,3 +40,17 @@ Image with a caption:
 ```
 
 Always include useful alt text. Images are versioned with the article and served directly by GitHub Pages; no external image service is required at this stage.
+
+## Analytics
+
+In [Cloudflare Web Analytics](https://dash.cloudflare.com/?to=/:account/web-analytics), add `copyrunstart.karthiksagar.com`, open **Manage site**, and copy the public token from the JavaScript snippet into `cloudflare_web_analytics.token` in `_config.yml`. This is the site's public beacon token, not a Cloudflare API token. If the hostname is proxied through Cloudflare, select **Enable with JS Snippet installation** to avoid also injecting the beacon automatically.
+
+The shared layout loads the beacon on all pages only in production and only when a token is configured. GitHub Pages uses the production environment. Leave the token empty to disable analytics; local development builds never send analytics. After publishing, visit a page and check Cloudflare after a few minutes. See [Cloudflare's setup instructions](https://developers.cloudflare.com/web-analytics/get-started/).
+
+## Comments and reactions
+
+Install the [Giscus GitHub app](https://github.com/apps/giscus) with access to **only `karsagar28.github.io`**. GitHub Discussions must remain enabled. The `giscus` settings in `_config.yml` identify this repository and its Announcements category.
+
+Each post includes Giscus comments with main-post reactions enabled, a comment box above the conversation, lazy loading, and a light theme matching the blog. Readers sign in with GitHub to participate. The first comment or reaction creates the discussion automatically; moderate it in the repository's Discussions tab.
+
+Discussions use strict `pathname` matching, so keep published post paths stable. Changing an article title or domain does not break its discussion if its path stays the same. Set `comments: false` in a post's front matter to hide both comments and reactions, or set `giscus.enabled: false` to disable them across the blog. The homepage and About page have no comment widget. See [Giscus configuration](https://giscus.app/).

@@ -1,0 +1,22 @@
+{% if site.giscus.enabled and page.comments != false %}
+<section class="post-discussion" aria-labelledby="discussion-heading">
+  <h2 id="discussion-heading">Comments &amp; reactions</h2>
+  <p class="discussion-help">Sign in with GitHub to leave a comment or reaction.</p>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.giscus.repo | escape }}"
+          data-repo-id="{{ site.giscus.repo_id | escape }}"
+          data-category="{{ site.giscus.category | escape }}"
+          data-category-id="{{ site.giscus.category_id | escape }}"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async></script>
+  <noscript>Enable JavaScript to see comments and reactions, or visit <a href="https://github.com/{{ site.giscus.repo | escape }}/discussions">GitHub Discussions</a>.</noscript>
+</section>
+{% endif %}
