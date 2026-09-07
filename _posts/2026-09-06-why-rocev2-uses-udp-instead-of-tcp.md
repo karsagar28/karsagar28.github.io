@@ -12,13 +12,9 @@ reading_time: 3
 
 Remote Direct Memory Access (RDMA) over Converged Ethernet, or RoCE, is often deployed on lossless Ethernet fabrics to work efficiently. Then why does RoCE run on UDP instead of TCP?
 
-TCP provides reliable transport through mechanisms such as acknowledgments and retransmissions. On the surface, TCP looks like a good fit for carrying RDMA traffic over an inherently lossy medium like Ethernet. RoCEv2, however, already has a transport layer that can provide reliability above UDP.
+TCP provides reliable transport through mechanisms such as acknowledgments and retransmissions. On the surface, TCP looks like a good fit for carrying RDMA traffic over an inherently lossy medium like Ethernet. 
 
 To understand why TCP isn't necessary, we need to look more closely at how RoCE transport works. RoCEv1 runs directly over Ethernet; [RoCEv2 adds UDP/IP encapsulation](https://networking-docs.nvidia.com/mlnxofedswum/24010331/rdma-over-converged-ethernet-roce).
-
-<blockquote class="article-note">
-  <p>Note: RDMA has different transport modes. This discussion focuses on RoCEv2 using Reliable Connected (RC) mode. In RC mode, the NIC handles acknowledgments and retransmissions. Unreliable Connected (UC) and Unreliable Datagram (UD) do not provide this transport-level recovery; higher application or protocol layers must handle loss if reliable delivery is required. See <a href="https://networking-docs.nvidia.com/doca/archive/3-5-0/rdma-aware-networks-programming-guide">NVIDIA's transport-mode guide</a> for details.</p>
-</blockquote>
 
 A simplified RoCEv2 stack looks like this, from the RDMA operations down to Ethernet:
 
@@ -30,6 +26,10 @@ A simplified RoCEv2 stack looks like this, from the RDMA operations down to Ethe
 | IP | Routing |
 | Ethernet | Link-layer delivery |
 
+<blockquote class="article-note">
+  <p>Note: RDMA has different transport modes. This discussion focuses on RoCEv2 using Reliable Connected (RC) mode. In RC mode, the NIC handles acknowledgments and retransmissions. Unreliable Connected (UC) and Unreliable Datagram (UD) do not provide this transport-level recovery; higher application or protocol layers must handle loss if reliable delivery is required. See <a href="https://networking-docs.nvidia.com/doca/archive/3-5-0/rdma-aware-networks-programming-guide">NVIDIA's transport-mode guide</a> for details.</p>
+</blockquote>
+
 The distinction is between reliable delivery and a lossless network:
 
 * Reliable delivery: The endpoints detect missing packets and retransmit them, subject to retry limits.
@@ -37,7 +37,7 @@ The distinction is between reliable delivery and a lossless network:
 
 RoCE uses InfiniBand (IB) transport mechanisms, which provide reliability in RC mode. These mechanisms run in hardware on an RDMA network interface card (NIC). Reliability does not mean delivery under every failure: [a connection can fail when its retry limits are exceeded](https://docs.nvidia.com/networking/display/nvidiawinof2documentationv25750000/rdma%2Bcapabilities).
 
-This explains why TCP is unnecessary for reliability in this case. TCP would introduce another transport layer when IB transport already handles acknowledgment and recovery. UDP provides a lightweight, stateless way to encapsulate those transport packets over IP.
+This explains why TCP is unnecessary for reliability here. TCP would introduce another transport layer when IB transport already handles acknowledgment and recovery. UDP provides a lightweight, stateless way to encapsulate those transport packets over IP.
 
 <blockquote class="article-note">
   <p>Note: A flavor of 'RDMA over TCP' actually exists, in the iWARP protocol suite. See <a href="https://www.rfc-editor.org/rfc/rfc5044.html">RFC 5044</a> </p>
