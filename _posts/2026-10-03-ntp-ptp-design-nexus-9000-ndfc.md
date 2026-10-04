@@ -13,16 +13,6 @@ reading_time: 12
 
 ## Overview
 
-| Field | Value |
-|---|---|
-| Document title | NTP and PTP design guide for Nexus 9000 NDFC fabrics |
-| Version | Public edition |
-| Last updated | September 2026 |
-
-All device names, clock identities, NTP hostnames, and addresses in this public edition are illustrative. The address examples use the private `10.1.1.0/24` range.
-
-## Purpose and scope
-
 This guide describes a time-synchronization design for Cisco Nexus 9000 leaf-spine VXLAN EVPN fabrics managed by Cisco Nexus Dashboard Fabric Controller (NDFC).
 
 It uses two complementary services:
@@ -58,20 +48,7 @@ The protocols do not conflict because they discipline different clocks. NX-OS cl
   <figcaption><a href="https://app.excalidraw.com/s/7Zy4MTUQ2T3/2U80uMEc9ok">Editable Excalidraw diagram</a></figcaption>
 </figure>
 
-```text
-NTP service
-    |
-    v
-Grandmaster system clock
-    |
-    | ptp clock periodic-update
-    v
-Grandmaster hardware clock
-    |
-    | PTP
-    v
-Downstream PTP boundary clocks
-```
+
 
 - NTP sets the absolute wall-clock time on the grandmaster system clock.
 - `ptp clock periodic-update` copies that system-clock time to the grandmaster hardware clock.
